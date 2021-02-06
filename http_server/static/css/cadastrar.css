@@ -1,0 +1,14 @@
+@import url("common.css");
+
+.card {
+    margin: 0;
+}
+
+.row {
+    margin: 0;
+    padding: 0;
+}
+
+.row .col {
+    padding: 0;
+}

@@ -3,47 +3,218 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_main"
-    app:startDestination="@id/interessesFragment">
+    app:startDestination="@id/checkCredentials">
 
     <fragment
-        android:id="@+id/interessesFragment"
-        android:name="com.wwmm.sostecsaude.ui.interesses.InteressesFragment"
-        android:label="@string/title_interesses"
-        tools:layout="@layout/fragment_interesses">
+        android:id="@+id/unidadeManutencao"
+        android:name="com.wwmm.sostecsaude.ui.unidade_manutencao.UnidadeManutencao"
+        android:label="@string/title_equipamentos"
+        tools:layout="@layout/fragment_unidade_manutencao"/>
+    <fragment
+        android:id="@+id/unidadeSaude"
+        android:name="com.wwmm.sostecsaude.ui.unidade_saude.UnidadeSaude"
+        android:label="UnidadeSaude" />
+    <fragment
+        android:id="@+id/dadosUnidadeSaude"
+        android:name="com.wwmm.sostecsaude.ui.unidade_saude.DadosUnidadeSaude"
+        android:label="@string/title_dados_unidade"
+        tools:layout="@layout/fragment_dados_unidade_saude">
         <action
-            android:id="@+id/action_interessesFragment_to_nested_graph_relatar"
-            app:destination="@id/nested_graph_relatar" />
+            android:id="@+id/action_dadosUnidadeSaude_to_welcome"
+            app:destination="@id/welcome"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_dadosUnidadeSaude_to_unidadeSaude"
+            app:destination="@id/unidadeSaude"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
-    <navigation
-        android:id="@+id/nested_graph_relatar"
-        app:startDestination="@id/addFragment">
-        <fragment
-            android:id="@+id/unidadeSaude"
-            android:name="com.wwmm.sostecsaude.ui.contatos.UnidadeSaude"
-            android:label="@string/title_contato"
-            tools:layout="@layout/fragment_contatos_unidadesaude">
-            <action
-                android:id="@+id/action_unidadeSaude_to_addFragment"
-                app:destination="@id/addFragment" />
-        </fragment>
-        <fragment
-            android:id="@+id/listFragment2"
-            android:name="com.wwmm.sostecsaude.ui.relatar_danos.VerPedidos"
-            android:label="@string/title_ver_danos"
-            tools:layout="@layout/fragment_relatar_danos_ver_pedidos" />
-        <fragment
-            android:id="@+id/addFragment"
-            android:name="com.wwmm.sostecsaude.ui.relatar_danos.Relatar"
-            android:label="@string/title_relatar_danos"
-            tools:layout="@layout/fragment_relatar_danos_relatar" />
+    <fragment
+        android:id="@+id/dadosUnidadeManutencao"
+        android:name="com.wwmm.sostecsaude.ui.unidade_manutencao.DadosUnidadeManutencao"
+        android:label="@string/title_dados_unidade"
+        tools:layout="@layout/fragment_dados_unidade_manutencao">
         <action
-            android:id="@+id/action_global_listFragment"
-            app:destination="@id/listFragment2" />
+            android:id="@+id/action_dadosUnidadeManutencao_to_welcome"
+            app:destination="@id/welcome"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
         <action
-            android:id="@+id/action_global_unidadeSaude"
+            android:id="@+id/action_dadosUnidadeManutencao_to_unidadeManutencao"
+            app:destination="@id/unidadeManutencao"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <action android:id="@+id/action_global_unidadeSaude" app:destination="@id/dadosUnidadeSaude" />
+    <action android:id="@+id/action_global_unidadeManutencao" app:destination="@id/dadosUnidadeManutencao" />
+    <fragment
+        android:id="@+id/criarConta"
+        android:name="com.wwmm.sostecsaude.ui.login.CriarConta"
+        android:label="@string/title_criar_conta"
+        tools:layout="@layout/fragment_criar_conta" >
+        <action
+            android:id="@+id/action_criarConta_to_dadosUnidadeSaude"
+            app:destination="@id/dadosUnidadeSaude"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_criarConta_to_dadosUnidadeManutencao"
+            app:destination="@id/dadosUnidadeManutencao"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.wwmm.sostecsaude.ui.login.Login"
+        android:label="Login">
+        <action
+            android:id="@+id/action_login_to_criarConta"
+            app:destination="@id/criarConta"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_fazerLogin_to_unidadeManutencao"
+            app:destination="@id/unidadeManutencao"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/nav_graph_main"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_login_to_unidadeSaude"
+            app:destination="@id/unidadeSaude"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/nav_graph_main"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_login_to_homeAdministration"
+            app:destination="@id/homeAdministration"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/nav_graph_main"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkCredentials"
+        android:name="com.wwmm.sostecsaude.ui.login.CheckCredentials"
+        android:label="@string/title_check_credentials"
+        tools:layout="@layout/fragment_check_credentials">
+        <action
+            android:id="@+id/action_checkCredentials_to_login"
+            app:destination="@id/login"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/nav_graph_main"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_checkCredentials_to_unidadeSaude"
+            app:destination="@id/unidadeSaude"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/nav_graph_main"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_checkCredentials_to_unidadeManutencao"
+            app:destination="@id/unidadeManutencao"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/nav_graph_main"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_checkCredentials_to_homeAdministration"
+            app:destination="@id/homeAdministration"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/nav_graph_main"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <action android:id="@+id/action_global_fazerLogin" app:destination="@id/login" />
+    <fragment
+        android:id="@+id/welcome"
+        android:name="com.wwmm.sostecsaude.ui.login.Welcome"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcome_to_unidadeManutencao"
+            app:destination="@id/unidadeManutencao"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_welcome_to_unidadeSaude"
+            app:destination="@id/unidadeSaude"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeAdministration"
+        android:name="com.wwmm.sostecsaude.ui.administration.Home"
+        android:label="@string/title_administration_area"
+        tools:layout="@layout/fragment_admin_home" />
+    <fragment
+        android:id="@+id/adicionarEquipamento"
+        android:name="com.wwmm.sostecsaude.ui.unidade_saude.AdicionarEquipamento"
+        android:label="fragment_unidade_saude_adicionar_equipamento"
+        tools:layout="@layout/fragment_unidade_saude_adicionar_equipamento" >
+        <action
+            android:id="@+id/action_adicionarEquipamento_to_unidadeSaude"
             app:destination="@id/unidadeSaude" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_adicionarEquipamento"
+        app:destination="@id/adicionarEquipamento"
+        app:enterAnim="@android:anim/slide_in_left"
+        app:exitAnim="@android:anim/slide_out_right"
+        app:popEnterAnim="@android:anim/slide_in_left"
+        app:popExitAnim="@android:anim/slide_out_right" />
+    <fragment
+        android:id="@+id/alterarSenha"
+        android:name="com.wwmm.sostecsaude.ui.login.AlterarSenha"
+        android:label="fragment_alterar_senha"
+        tools:layout="@layout/fragment_alterar_senha" >
         <action
-            android:id="@+id/action_global_addFragment"
-            app:destination="@id/addFragment" />
-    </navigation>
+            android:id="@+id/action_alterarSenha_to_checkCredentials"
+            app:destination="@id/checkCredentials"
+            app:popUpTo="@id/nav_graph_main"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_alterarSenha"
+        app:destination="@id/alterarSenha"
+        app:enterAnim="@android:anim/slide_in_left"
+        app:exitAnim="@android:anim/slide_out_right"
+        app:popEnterAnim="@android:anim/slide_in_left"
+        app:popExitAnim="@android:anim/slide_out_right" />
 </navigation>

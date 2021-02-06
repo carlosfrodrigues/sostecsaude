@@ -1,0 +1,51 @@
+/*
+    Toast messages
+*/
+
+#toast-container {
+  max-width: 100%;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.toast {
+  background-color: transparent;
+  padding: 0;
+}
+
+.toast .card {
+  margin: 0;
+  width: 100%;
+}
+
+/*
+    Modals
+*/
+
+.modal .modal-content {
+  padding: 0;
+}
+
+.modal .modal-content .card {
+  margin: 0;
+}
+
+/*
+    Row dentro de um botão
+*/
+
+.btn .row {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3px;
+}
+
+/*
+    Reduzindo o padding dentro das cards
+*/
+
+.card .card-content {
+  padding: 12px;
+}

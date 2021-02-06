@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@drawable/ic_search_white"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        android:title="@string/title_search" />
+    <item
+        android:id="@+id/menu_atualizar_perfil"
+        android:title="@string/title_dados_unidade" />
+    <item
+        android:id="@+id/menu_alterar_senha"
+        android:title="@string/title_alterar_senha" />
+    <item
+        android:id="@+id/menu_login"
+        android:title="@string/title_sair" />
+</menu>

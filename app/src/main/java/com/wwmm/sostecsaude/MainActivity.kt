@@ -1,38 +1,72 @@
 package com.wwmm.sostecsaude
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
+import android.os.Build
 import android.os.Bundle
-import android.view.View
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.Navigation
-import androidx.navigation.ui.setupWithNavController
-import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.exposed.sql.Database
+import androidx.preference.PreferenceManager
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.iid.FirebaseInstanceId
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        bottom_nav.visibility = View.GONE
+        createNotificationChannel()
+    }
 
-        val controller = Navigation.findNavController(this, R.id.nav_host_main)
+    private fun createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val id = getString(R.string.notification_avisos_id)
 
-        toolbar.setupWithNavController(controller)
+            val name = getString(R.string.notification_avisos_name)
 
-        bottom_nav.setupWithNavController(controller)
+            val descriptionText = getString(R.string.notification_avisos_description)
 
-//        Database.connect(
-//            "jdbc:mysql://remotemysql.com/mQe0EBGW7O",
-//            driver = "com.mysql.jdbc.Driver",
-//            user = "mQe0EBGW7O",
-//            password = "azsZegvXg6"
-//        )
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
 
-        Database.connect(
-            "jdbc:mysql://albali.eic.cefet-rj.br/sostecsaude",
-            driver = "com.mysql.jdbc.Driver",
-            user = "sostecsaude",
-            password = "Covid19.fap"
-        )
+            val channel = NotificationChannel(id, name, importance).apply {
+                description = descriptionText
+            }
+
+            // Register the channel with the system
+            val notificationManager: NotificationManager =
+                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+            notificationManager.createNotificationChannel(channel)
+        }
+
+        FirebaseInstanceId.getInstance().instanceId
+            .addOnCompleteListener(OnCompleteListener { task ->
+                if (!task.isSuccessful) {
+                    Log.w(LOGTAG, "getInstanceId failed", task.exception)
+
+                    return@OnCompleteListener
+                }
+
+                val token = task.result?.token
+
+                if (token != null) {
+                    val prefs = PreferenceManager
+                        .getDefaultSharedPreferences(this)
+
+                    val editor = prefs.edit()
+
+                    editor.putString("FBtoken", token)
+
+                    editor.apply()
+                }
+            })
+    }
+
+    companion object {
+        const val LOGTAG = "MainActivity"
     }
 }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="css/materialdesignicons.css" rel="stylesheet" />
+        <link href="css/materialize.min.css" media="screen,handheld" rel="stylesheet" />
+        <link href="css/cadastrar.css" rel="stylesheet" />
+        <title>Classberry</title>
+    </head>
+
+    <body>
+        <!-- cadastro -->
+        <div class="card center">
+            <div class="card-content blue-grey lighten-5">
+                <form id="form_cadastrar">
+                    <span class="card-title">Perfil</span>
+                    <div class="row">
+                        <div class="col">
+                            <label>
+                                <input class="with-gap" name="perfil" type="radio" value="unidade_saude" checked />
+                                <span>Sou de uma unidade de saúde</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label>
+                                <input class="with-gap" name="perfil" type="radio" value="unidade_manutencao" />
+                                <span>Sou de uma unidade de manutenção</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                        <div class="col">
+                            <label>
+                                <input class="with-gap" name="perfil" type="radio" value="unidade_transporte" />
+                                <span>Sou de uma unidade de transporte</span>
+                            </label>
+                        </div>
+                    </div> -->
+
+                    <span class="card-title">Email</span>
+
+                    <div class="input-field">
+                        <input name="email" type="email" class="validate" required autofocus />
+                        <label for="email" class="active">Email</label>
+                    </div>
+
+                    <span class="card-title">Senha</span>
+
+                    <div class="input-field">
+                        <input class="validate" type="password" name="senha" minlength="6" required autofocus />
+                        <label class="active">Senha</label>
+                    </div>
+                    <div class="input-field">
+                        <input
+                            class="validate"
+                            type="password"
+                            name="senha_confirmacao"
+                            minlength="6"
+                            required
+                            autofocus
+                        />
+                        <label class="active">Confirmar Senha</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <button class="btn waves-effect waves-yellow cyan darken-3" type="submit">
+                            Cadastrar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Bibliotecas devem ser carregadas antes do arquivo main.js -->
+        <script src="js/libs/materialize.min.js"></script>
+        <script type="module" src="js/cadastrar.js"></script>
+    </body>
+</html>

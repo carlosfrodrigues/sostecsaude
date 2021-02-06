@@ -1,38 +1,111 @@
 <resources>
     <string name="app_name">SOSTecSaúde</string>
-    <string name="title_add">Registrar Pedido</string>
-    <string name="title_list">Submissões</string>
+    <string name="title_add">Registrar</string>
+    <string name="title_adicionar_equipamento">Adicionar Equipamento</string>
+    <string name="title_pedidos">Pedidos</string>
     <string name="title_remove">Remover</string>
     <string name="title_unidade_saude">Unidade de Saúde</string>
+    <string name="title_unidades_saude">Unidades de Saúde</string>
 
-    <string name="title_local">Endereço da Unidade</string>
+    <string name="title_endereco">Endereço</string>
+    <string name="title_endereco_unidade">Endereço da Unidade</string>
+
     <string name="title_equipamento">Equipamento</string>
     <string name="title_defeito">Defeito</string>
     <string name="title_quantidade">Quantidade</string>
     <string name="title_fabricante">Fabricante</string>
     <string name="title_modelo">Modelo</string>
     <string name="title_numero_serie">Número de Série</string>
+    <string name="title_id_sistema">Identificação no Sistema</string>
 
+    <string name="title_empresa">Empresa</string>
+    <string name="title_equipamentos">Equipamentos</string>
+    <string name="title_quantidade_com_defeito">Quantidade de Equipamentos Danificados:</string>
+    <string name="title_local">Local</string>
+    <string name="title_cnpj">CNPJ</string>
+    <string name="title_telefone">Telefone</string>
+    <string name="title_quero_consertar">Quero Consertar</string>
+    <string name="title_empresas">Empresas</string>
+
+    <string name="title_ver_pedidos_conserto">Pedidos Realizados</string>
+    <string name="title_ofertas">Ofertas</string>
+    <string name="title_ofertas_manutencao">Ofertas de Manutenção</string>
+
+    <string name="title_registro">Registro</string>
+
+    <string name="title_com_defeito">Lista Geral</string>
+    <string name="title_estou_consertando">Meus Reparos</string>
+
+    <string name="title_email">Email</string>
+    <string name="title_seu_email">Seu Email</string>
+    <string name="title_contato">Contato</string>
+    <string name="title_setor">Setor</string>
+
+    <string name="title_perfil">Quem você representa?</string>
+    <string name="title_perfil_unidade_saude">Represento uma unidade de saúde</string>
+    <string name="title_perfil_unidade_manutencao">Represento uma unidade de manutenção de equipamentos</string>
+
+    <string name="title_entrar">Entrar</string>
+    <string name="title_criar_conta">Criar Conta</string>
+    <string name="title_sair">Sair</string>
+    <string name="title_enviar">Enviar</string>
+    <string name="title_senha">Senha</string>
+    <string name="title_alterar_senha">Alterar Senha</string>
+    <string name="title_senha_confirmar">Confirmar Senha</string>
+    <string name="title_senha_atual">Senha Atual</string>
+    <string name="title_senha_nova">Nova Senha</string>
+    <string name="title_senha_confirmar_nova_senha">Confirmar Nova Senha</string>
     <string name="title_update">Atualizar</string>
     <string name="title_save">Salvar</string>
 
-    <string name="title_empresas">Empresas</string>
-    <string name="title_setor_enfermagem">Enfermagem</string>
-    <string name="title_setor_manutencao">Manutencao</string>
+    <string name="title_unidades_minusculo">unidades</string>
+    <string name="title_unidades_manutencao">Unidades de Manutenção</string>
+    <string name="title_unidade_manutencao">Nome da Unidade de Manutenção</string>
+    <string name="title_dados_unidade">Dados da Unidade</string>
 
-    <string name="title_relatar_danos">Descrição do Equipamento</string>
-    <string name="title_ver_danos">Pedidos Realizados</string>
-    <string name="title_profissional_contato">Seus Dados</string>
+    <string name="title_check_credentials">Conectando…</string>
+    <string name="title_carregar_perfil">Carregando…</string>
+    <string name="title_retry">Tentar Novamente</string>
 
-    <string name="title_seu_nome">Seu Nome</string>
-    <string name="title_seu_email">Seu Email</string>
-    <string name="title_contato">Seus Dados</string>
-    <string name="title_setor">Setor</string>
+    <string name="title_welcome_unidade_saude">
+        Seu cadastro foi realizado e você já poderá inserir informações em nosso banco. Mas por
+        questões de segurança, seus pedidos de reparo somente estarão visíveis para as unidades de
+        manutenção após o nosso time validar seus dados cadastrais. Você receberá uma notificação
+        em caso de aprovação.
+    </string>
+    <string name="title_welcome_unidade_manutencao">
+        Seu cadastro foi realizado e você já poderá inserir informações em nosso banco. Mas por
+        questões de segurança, suas manifestações de interesse em reparo de equipamentos somente
+        estarão visíveis para as unidades de saúde após o nosso time validar seus dados cadastrais.
+        Você receberá uma notificação em caso de aprovação.
+    </string>
+    <string name="title_continuar">Continuar</string>
 
-    <string name="title_interesses">Escolha uma atividade</string>
-    <string name="title_interesses_pedir_reparo">"Pedir reparo em equipamentos"</string>
-    <string name="title_interesses_consertar">"Realizar reparos em equipamentos"</string>
-    <string name="title_interesses_transporte">"Transportar equipamentos"</string>
+    <string name="notification_avisos_id">avisos</string>
+    <string name="notification_avisos_name">Avisos</string>
+    <string name="notification_avisos_description">
+        Avisos
+    </string>
 
-    <string name="title_entrar">Entrar</string>
+    <string name="title_administration_area">Área Administrativa</string>
+    <string name="title_usuarios">Usuários</string>
+    <string name="title_usuario">Usuário</string>
+    <string name="title_hospitais">Hospitais</string>
+    <string name="title_oficinas">Oficinas</string>
+    <string name="title_whitelist">Whitelist</string>
+    <string name="title_nome">Nome</string>
+
+    <string name="title_relatorio">Relatório</string>
+    <string name="title_gerar_relatorio">Gerar Relatório</string>
+    <string name="title_salvar_relatorio">Salvar Relatório</string>
+
+    <string name="title_table_status_unidade_saude">Status por unidade de saúde</string>
+    <string name="title_table_status_equipamento">Status por equipamento</string>
+    <string name="title_table_status_global">Status global</string>
+    <string name="title_bar_chart_global">Status geral</string>
+
+    <string name="title_search">Procurar</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

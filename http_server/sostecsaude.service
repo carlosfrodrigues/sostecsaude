@@ -1,0 +1,11 @@
+[Unit]
+Description=SOSTecSaude
+Requires=network.target
+
+[Service]
+Environment="GOOGLE_APPLICATION_CREDENTIALS=/home/dbrandao/sostecsaude/sostecsaude_firebase_key.json"
+WorkingDirectory=/home/dbrandao/sostecsaude
+ExecStart=/home/dbrandao/sostecsaude/main
+
+[Install]
+WantedBy=multi-user.target
